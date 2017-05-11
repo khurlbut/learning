@@ -1,0 +1,14 @@
+$ kubectl get pods --all-namespaces
+Unable to connect to the server: Service Unavailable
+
+$ export no_proxy=$no_proxy,$(minikube ip)
+$ export NO_PROXY=$no_proxy,$(minikube ip)
+
+$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                          READY     STATUS    RESTARTS   AGE
+kube-system   kube-addon-manager-minikube   1/1       Running   4          1h
+kube-system   kube-dns-v20-z8dob            3/3       Running   12         1h
+kube-system   kubernetes-dashboard-rn9hv    1/1       Running   4          1h
+
+
+https://github.com/kubernetes/kubernetes.git

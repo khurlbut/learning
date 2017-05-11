@@ -1,0 +1,11 @@
+ssh -i /Users/ke015t7/sshKeys/gapUser_rsa gapUser@kube-mgmt.westus.cloudapp.azure.com -A -p 2200
+ssh -i /Users/ke015t7/sshKeys/gapUser_rsa gapUser@kube-mgmt.westus.cloudapp.azure.com -A  // This one worked...
+
+scp -i /Users/ke015t7/sshKeys//gapUser_rsa gapUser@kube-mgmt.westus.cloudapp.azure.com:.kube/config ./app/config
+export KUBECONFIG=`pwd`/app/config
+
+kube-mgmt.westus.cloudapp.azure.com
+
+k8s-master-ip-kube-mgmt-34203559/kube-mgmt.westus.cloudapp.azure.com
+
+azure group deployment create --name="kdh-test-0.0.1" --resource-group="AcsKubernetesPoc" --template-file="./_output/Kubernetes-31053170/azuredeploy.json" parameters-file="_output/Kubernetes-31053170/azuredeploy.parameters.json"
